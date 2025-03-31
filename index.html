@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הזמנת אירוע</title>
+    <link rel="stylesheet" href="3.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="mark.png" alt="Logo" class="logo">
+    </div>
+    <div class="order-container">
+        <div class="order-text">O r d e r   &nbsp; a n   &nbsp; e v e nt</div>
+        <div class="order-title">הזמנת אירוע</div>
+        <img src="Line 3.png">
+    </div>
+    <div class="main-container">
+        <img src="top1.png" alt="Main Image" class="main-image">
+         <!-- <div class="main-image"></div> -->
+        
+        <div class="icon-section">
+            <div class="icon-item">
+                <div class="icon person"><img src="fi-rr-user.png" alt="user Image" class="icon-image"></div>
+                <div><span class="section-number">01</span> <span class="section-title">פרטי המוזמן</span></div>
+            </div>
+            <div class="icon-item">
+                <div class="icon person"><img src="fi-rr-utensils (1).png" alt="user Image" class="icon-image"></div>
+                <div><span class="section-number">02</span> <span class="section-title">תפריט</span></div>
+            </div>
+            <div class="icon-item">
+                <div class="icon cake"><img src="fi-rr-cream.png" alt="user Image" class="icon-image"></div>
+                <div><span class="section-number">03</span> <span class="section-title">תוספות מיוחדות</span></div>
+            </div>
+        </div>
+        <div class="menu-title">
+            <img src="Line 3.png" class="menu-line">
+            <div class="menu-row">
+                <img src="Frame 106.png">
+                <span class="menu-text">מנה עיקרית</span>
+            </div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-container">
+                <div class="menu-item">
+                    <div class="checkbox"></div>
+                    <img src="Frame 73.png" alt="חומוס + טחינה" class="food-image">
+                    <div class="item-content">חומוס + טחינה</div>
+                </div>
+                <div class="menu-item">
+                    <div class="checkbox"></div>
+                    <img src="Frame 73.png" alt="חומוס + טחינה" class="food-image">
+                    <div class="item-content">חומוס + טחינה</div>
+                </div>
+                <div class="menu-item">
+                    <div class="checkbox"></div>
+                    <img src="Frame 73.png" alt="חומוס + טחינה" class="food-image">
+                    <div class="item-content">חומוס + טחינה</div>
+                </div>
+                <div class="menu-item">
+                    <div class="checkbox"></div>
+                    <img src="Frame 73.png" alt="חומוס + טחינה" class="food-image">
+                    <div class="item-content">חומוס + טחינה</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="btn-right">
+            <button class="right-btn">המשך</button>
+        </div>
+        <!-- <br> -->
+        <div class="container">
+            <div class="product-card">
+                <img src="Frame 73 (1).png" alt="גלידת תותים על מצע דובדבנים" class="product-image">
+                <div class="product-cardtxt">
+                    <h3 class="product-title">גלידת תותים על מצע דובדבנים</h3>
+                    <p class="price">10.9 ליחידה</p>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn plus">+</button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn minus">-</button>
+                </div>
+            </div>
+    
+            <div class="product-card">
+                <img src="Frame 73 (1).png" alt="גלידת תותים על מצע דובדבנים" class="product-image">
+                <div class="product-cardtxt">
+                    <h3 class="product-title">גלידת תותים על מצע דובדבנים</h3>
+                    <p class="price">10.9 ליחידה</p>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn plus">+</button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn minus">-</button>
+                </div>
+            </div>
+    
+            <div class="product-card">
+                <img src="Frame 73 (1).png" alt="גלידת תותים על מצע דובדבנים" class="product-image">
+                <div class="product-cardtxt">
+                    <h3 class="product-title">גלידת תותים על מצע דובדבנים</h3>
+                    <p class="price">10.9 ליחידה</p>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn plus">+</button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn minus">-</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <hr class="hr-line">
+        <div class="two-pricelist">
+            <span class="two-downtxt">סה”כ</span>
+            <span class="two-price">5,850</span>
+        </div>
+        <div class="btn-left">
+            <button class="right-btn">המשך</button>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', () => {
+            item.classList.toggle('selected');
+        });
+    });
+
+    document.querySelectorAll('.quantity-control').forEach(control => {
+            const minusBtn = control.querySelector('.minus');
+            const plusBtn = control.querySelector('.plus');
+            const display = control.querySelector('.quantity-display');
+            let quantity = 0;
+
+            plusBtn.addEventListener('click', () => {
+                quantity++;
+                display.textContent = quantity;
+            });
+
+            minusBtn.addEventListener('click', () => {
+                if (quantity > 0) {
+                    quantity--;
+                    display.textContent = quantity;
+                }
+            });
+        });
+</script>
+</html>
